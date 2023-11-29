@@ -2,7 +2,7 @@ package com.shivaa.basics;
 
 import java.util.Scanner;
 
-public class inputTake {
+public class InputTake {
 
     public static void main(String[] args) {
 
