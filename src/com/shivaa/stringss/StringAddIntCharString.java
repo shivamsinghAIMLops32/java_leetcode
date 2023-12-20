@@ -27,5 +27,8 @@ public class StringAddIntCharString {
         System.out.println("enter "+ subject+ " grade :- ");
         char grade = scn.next().charAt(0);
         System.out.println(subject + " marks = "+ marks + " grade = "+ grade);
+
+        System.out.println("name" +6 +7);
+        System.out.println("name" +(6 +7));
     }
 }
