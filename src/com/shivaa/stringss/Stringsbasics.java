@@ -3,7 +3,7 @@ package com.shivaa.stringss;
 import java.util.*;
 public class Stringsbasics {
     public static void main(String[] args) {
-        // this how you define a string
+        // this how you define a string and intilization
         String s = "hello world";
         System.out.println(s);
 
