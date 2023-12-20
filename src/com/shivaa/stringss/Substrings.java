@@ -17,10 +17,13 @@ public class Substrings {
         String name = scn.nextLine();
         System.out.println("enter the index from where wanna print substring :- ");
         int n = scn.nextInt();
-        for (int i = name.indexOf(name.charAt(n)); i <= name.length(); i++) {
+
+        for (int i = name.indexOf(name.charAt(n)); i < name.length(); i++) {
+        for (int j = i+1; j <= name.length(); j++) {
             if (name.length() == 0){
                 System.out.println("invalid string");
-            }else System.out.println(name.substring(i));
+            }else System.out.println(name.substring(i,j));
+        }
         }
     }
 }
