@@ -1,4 +1,4 @@
-package com.shivaa.stringss;
+package com.shivaa.stringss.quesions;
 import java.util.*;
 public class QUEFIRST {
     public static void main(String[] args) {
