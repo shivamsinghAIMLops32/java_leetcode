@@ -35,5 +35,10 @@ public class TypeCasting {
 
         // int * float = float
         System.out.println(9*5.7f);
+
+        // char to ascii
+        char ch = 'b';
+        int ascii = (int)ch;
+        System.out.println(ascii);    // 98
     }
 }

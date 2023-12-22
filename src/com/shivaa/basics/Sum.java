@@ -10,5 +10,8 @@ public class Sum {
 
         int sum = num1+num2;
         System.out.println("the sum of given numbers "+ sum);
+
+        int sub = num1 - num2;
+        System.out.println("the subtract of two digit "+ sub);
     }
 }
