@@ -1,4 +1,4 @@
-package com.shivaa.stringss.quesions;
+package com.shivaa.stringss.leetcodequesions;
 
 import java.util.*;
 
