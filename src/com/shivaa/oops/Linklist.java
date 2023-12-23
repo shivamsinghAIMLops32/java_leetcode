@@ -4,29 +4,41 @@ public class Linklist {
 
     public static void main(String[] args) {
 
-        Node node1 = new Node();
-        node1.ll(5);
-        System.out.println("the node1 value is " + node1.value + "-> " + node1.next);
-
-        Node node2 = new Node();
-        node2.ll(7, node1);
-        System.out.println("the node2 value is " + node2.value + "-> " + node2.next.value);
-
+        Linkedlist list = new Linkedlist();
+        list.addFirst(5);
+        Linkedlist list2 = new Linkedlist();
+        list2.addFirst(7);
+//        System.out.println(list2.value);
     }
 
     // class of node having a invoke instance function ll to use as this keyword passing value
-    public static class Node {
-        int value;
-        Node next;
+   public static class Linkedlist{
+        Node head;
+        int size;
 
-        public void ll(int value) {
-            this.value = value;
-            this.next = null;
+        // Node class
+        public static class Node {
+            int value;
+            Node next;
+
+            Node(int value){
+                this.value = value;
+                this.next = next;
+            }
+
+            Node(int value, Node next){
+                this.value = value;
+                this.next = next;
+            }
+
         }
+        // node class end and ADDFirst
 
-        public void ll(int value, Node next) {
-            this.value = value;
-            this.next = next;
+        public void addFirst(int value){
+            Node new_node = new Node(value);
+
+            new_node.next = head;
+            head = new_node;
         }
     }
 }
