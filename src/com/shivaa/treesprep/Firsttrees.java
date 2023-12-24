@@ -35,10 +35,12 @@ public class Firsttrees {
         public static void traverse(Node root){
             if (root == null) {
                 return;
-            }
-            System.out.print(root.data + " -> ");
+             }
+//            System.out.print(root.data + " -> ");      5 -> 7 -> 40 -> 22 -> 23 -> 19 -> 40 -> 22 -> 23 -> 6 ->
             traverse(root.left);
+//          System.out.print(root.data + " -> ");        40 -> 23 -> 22 -> 7 -> 5 -> 40 -> 23 -> 22 -> 19 -> 6 ->
             traverse(root.right);
+//            System.out.print(root.data + " -> ");      23 -> 22 -> 40 -> 7 -> 23 -> 22 -> 40 -> 6 -> 19 -> 5 ->
         }
     }
 }
