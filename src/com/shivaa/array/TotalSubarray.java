@@ -13,8 +13,9 @@ public class TotalSubarray {
         ArrayList<Integer> newSubArray = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = i+1; j < nums.length; j++) {
-                newSubArray.add(nums[j]);
+                newSubArray.add(nums[i],nums[j]);
             }
+            System.out.println(newSubArray);
         }
     }
 }

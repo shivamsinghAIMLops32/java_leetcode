@@ -9,11 +9,15 @@ public class Linklist {
         Linkedlist list2 = new Linkedlist();
         list2.addFirst(7);
 //        System.out.println(list2.value);
+        Linkedlist list3 = new Linkedlist();
+        list3.addLast(5);
+//        System.out.println(list3.value);
     }
 
     // class of node having a invoke instance function ll to use as this keyword passing value
    public static class Linkedlist{
         Node head;
+        Node tail;
         int size;
 
         // Node class
@@ -39,6 +43,14 @@ public class Linklist {
 
             new_node.next = head;
             head = new_node;
+            size++;
+        }
+
+        public void addLast(int value){
+            Node new_node = new Node(value);
+            new_node.next = tail;
+            tail = new_node;
+            size++;
         }
     }
 }
