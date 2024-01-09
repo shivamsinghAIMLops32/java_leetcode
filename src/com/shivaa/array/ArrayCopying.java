@@ -17,6 +17,32 @@ public class ArrayCopying {
         System.out.println(array1);                       // [I@3feba861
         array1[2] = 4;
         System.out.println(array[2]);                     // 4
+
+
+        System.out.println("---------SWAP----------");
+        int[] arr = {10,40,20,40,60};
+        int i = 0;
+        int j = 3;
+        System.out.println(arr[i] + "," + arr[j]);               // 10,40
+        swap(arr[i],arr[j]);
+        System.out.println(arr[i] + "," + arr[j]);               // 10,40
+
+        swap(arr,i,j);
+        System.out.println(arr[i] + "," + arr[j]);             // 40,10
+    }
+
+    // swap funtion
+    public static void swap(int a, int b){
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    // array value swap
+    public static void swap(int[] array,int i,int j){
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
 }
