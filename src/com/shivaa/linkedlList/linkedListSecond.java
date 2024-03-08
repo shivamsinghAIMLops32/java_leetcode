@@ -1,11 +1,11 @@
 //package com.shivaa.linkedlList;
 //
-//public class linkListFirst {
+//public class linkedListSecond {
 //    public static class Node{
 //        int data;   // value
 //        Node next;  // address of next node
 //
-//         Node(int data){
+//        Node(int data){
 //            this.data = data;
 //        }
 //    }
@@ -22,7 +22,18 @@
 //        c.next = d;   //(2->4->3->6 5)
 //        d.next = e;   //(2->4->3->6->5)
 //
-//        System.out.println(a.next.next.data);
-//        System.out.println(b.next.next.next.data);
+//        Node temp = a;
+//        for (int i = 0; i < 5; i++) {
+//            System.out.print(temp.data+"->");
+//            temp = temp.next;
+//        }
+//
+//        System.out.println();
+//
+//        Node temp2 = a;
+//        while(temp2 != null){
+//            System.out.print(temp2.data+"->");
+//            temp2 = temp2.next;
+//        }
 //    }
 //}
