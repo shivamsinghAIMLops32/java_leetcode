@@ -1,6 +1,7 @@
 package com.shivaa.linkedlList;
 
 public class linkedListThird {
+
     public static class Node{
         int data;   // value
         Node next;  // address of next node
@@ -9,39 +10,65 @@ public class linkedListThird {
             this.data = data;
         }
     }
-    public static void main(String[] args) {
-        Node a = new Node(2);
-        Node b = new Node(4);
-        Node c = new Node(3);
-        Node d = new Node(6);
-        Node e = new Node(5);
-        //(2->4->3->6->5)
-
-        a.next= b;  // b ka address in a ke next me (2->4 3 6 5)
-        b.next = c;   // (2->4->3 6 5)
-        c.next = d;   //(2->4->3->6 5)
-        d.next = e;   //(2->4->3->6->5)
-
-        displayRecursively(a);
-        System.out.println();
-        displayRecursivelyReverse(a);
-
-        System.out.println();
-        int len = length(a);
-        System.out.println(len);
-
-        System.out.println();
-        int lent = lengthRecursively(a);
-        System.out.println(lent);
-    }
-    //function
-    public static void display(Node head){
-        Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data+"->");
-            temp = temp.next;
+    public static class linkedlist{
+        Node head = null;
+        int size = 0;
+        void insert(int value){
+            Node newNode = new Node(value);
+            head = newNode;
+            size++;
+        }
+         void display(){
+            Node temp = head;
+            while(temp != null){
+                System.out.print(temp.data+"->");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
+//        void insertAtLastt(int value){
+//            if(head!= null ){
+//            Node newNode = new Node(value);
+//            head = newNode;
+//            size++;
+//            }
+//            Node newNode = new Node(value);
+//            Node temp = head;
+//            int length = 0;
+//            while(temp!=null){
+//              length++;
+//              temp = temp.next;
+//            }
+//            Node temp2 = head;
+//            for (int i = 0; i < length-2; i++) {
+//                temp2 = temp2.next;
+//            }
+//            temp2.next = newNode;
+//            size++;
+//        }
+        void insertAtLast(int value) {
+            Node newNode = new Node(value);
+            if (head == null) {
+                head = newNode;
+            } else {
+                Node temp = head;
+                while (temp.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+            }
+            size++;
         }
     }
+    public static void main(String[] args) {
+       linkedlist ll = new linkedlist();
+       ll.insertAtLast(3);
+       ll.insertAtLast(9);
+       ll.insertAtLast(4);
+       ll.display();
+    }
+    //function
+
 
     // recursively
     public static void displayRecursively(Node head){
@@ -69,6 +96,7 @@ public class linkedListThird {
         if(head==null) return 0;
         return 1 + lengthRecursively(head.next);
     }
+
 
 }
 

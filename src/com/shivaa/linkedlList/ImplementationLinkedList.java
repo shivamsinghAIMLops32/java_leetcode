@@ -12,6 +12,23 @@ public class ImplementationLinkedList {
     public static class linkedlist{
          Node head = null;
          Node tail = null;
+         int size  =0;
+
+         // insert without tail
+//        void insertAtLastHead(int value){
+//            Node newNode = new Node(value);
+//            if(head == null){
+//                head = newNode;
+//            }
+//            else{
+//                Node temp = head;
+//                while(temp!=null){
+//                    temp = temp.next;
+//                }
+//                temp.next = newNode;
+//            }
+//            size++;
+//        }
 
         // when there is a linked list previously
         void insertAtEnd(int val){
@@ -24,6 +41,7 @@ public class ImplementationLinkedList {
                 tail.next = temp;
                 tail = temp;
             }
+            size++;
         }
 
         void insertAtFirst(int value){
@@ -35,6 +53,62 @@ public class ImplementationLinkedList {
             else{ // non empty
                 newNode.next = head;
                 head = newNode;
+            }
+            size++;
+        }
+        void insertAtBeggining(int value){
+            Node newNode = new Node(value);
+            if(head == null){
+                insertAtEnd(value);
+            }
+            else{ // non empty
+                newNode.next = head;
+                head = newNode;
+            }
+            size++;
+            System.out.println();
+        }
+
+        void insertAtIndex(int idx,int value){
+            if(idx == 0){
+                insertAtFirst(value);
+            } else if (idx == size()) {
+                insertAtEnd(value);
+                return;
+            } else{
+               Node newNode = new Node(value);
+               // take temp as head on already given ll.
+               Node temp = head;
+               int count = 0;
+               while(temp != null){
+                   if(count == idx-1){
+                       newNode.next = temp.next;
+                       temp.next = newNode;
+                       count++;
+                   }
+                   temp = temp.next;
+                   count++;
+               }
+            }
+        }
+
+        void insertAt(int idx,int value){
+            if(idx == 0){  // first index
+                insertAtFirst(value);
+                return;
+            } else if (idx == size()) {  // last index
+                insertAtEnd(value);
+                return;
+            } else if (idx < 0 || idx > size()) {
+                throw new IndexOutOfBoundsException("index is either < 0 or > size of ll");
+            } else{
+                Node newNode = new Node(value);
+                Node temp = head;
+                for (int i = 0; i <=idx-1; i++) {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
             }
         }
         void display(){
@@ -56,37 +130,37 @@ public class ImplementationLinkedList {
             System.out.println();
             return count;
         }
+
+        int getAt(int idx){
+            if(head == null){
+                return 0;
+            } else if (idx < 0 || idx > size()) {
+                return -1;
+            }
+            Node temp = head;
+            for (int i = 0; i < idx; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
     }
 
     public static void main(String[] args) {
-        linkedlist ll = new linkedlist();
+          linkedlist ll = new linkedlist();
         ll.insertAtEnd(3);  //3
         ll.insertAtEnd(7);  // 3->7
         ll.insertAtEnd(9);  // 3->7->9
-
-        System.out.println(ll.tail.data);
+        ll.insertAtFirst(50);
         ll.display();
-        System.out.println(ll.tail.next);
 
-        int length = ll.size();
-        System.out.println(length);
+       ll.insertAtIndex(2,200);
+       ll.display();
 
-        ll.insertAtEnd(31);
-        ll.display();
-        System.out.println();
+       ll.insertAt(3,999);
+       ll.display();
         System.out.println(ll.size());
+        System.out.println(ll.getAt(3));
 
-        ll.insertAtFirst(30);
-        ll.display();
-        ll.insertAtFirst(35);
-        ll.display();
 
-        ll.insertAtEnd(99);
-        ll.display();
-       ll.insertAtFirst(6);
-       ll.display();
-       ll.insertAtFirst(5);
-       ll.display();
-       ll.size();
     }
 }
