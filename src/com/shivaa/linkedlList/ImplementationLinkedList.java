@@ -12,7 +12,7 @@ public class ImplementationLinkedList {
     public static class linkedlist{
          Node head = null;
          Node tail = null;
-         int size  =0;
+//         int size  =0;
 
          // insert without tail
         void insertAtLastHead(int value){
@@ -27,7 +27,7 @@ public class ImplementationLinkedList {
                 }
                 temp.next = newNode;
             }
-            size++;
+//            size++;
         }
 
         // when there is a linked list previously
@@ -41,7 +41,7 @@ public class ImplementationLinkedList {
                 tail.next = temp;
                 tail = temp;
             }
-            size++;
+//            size++;
         }
 
         void insertAtFirst(int value){
@@ -54,7 +54,7 @@ public class ImplementationLinkedList {
                 newNode.next = head;
                 head = newNode;
             }
-            size++;
+//            size++;
         }
         void insertAtBeggining(int value){
             Node newNode = new Node(value);
@@ -65,7 +65,7 @@ public class ImplementationLinkedList {
                 newNode.next = head;
                 head = newNode;
             }
-            size++;
+//            size++;
             System.out.println();
         }
 
@@ -131,6 +131,30 @@ public class ImplementationLinkedList {
             return count;
         }
 
+        void deleteAt(int idx) {
+            if (head == null || idx >= size()) {
+                System.out.println("Linked list is empty or index out of bounds.");
+            } else if (idx == 0) {
+                head = head.next;
+//                size--;
+                if (head == null) { // If head becomes null after deletion, set tail to null
+                    tail = null;
+                }
+                return;
+            } else {
+                Node temp = head;
+                for (int i = 0; i < idx - 1; i++) {
+                    temp = temp.next;
+                }
+                temp.next = temp.next.next;
+                if (idx == size() - 1) { // If the deleted node was the last node, update tail
+                    tail = temp;
+                }
+//                size--;
+            }
+        }
+
+
         int getAt(int idx){
             if(head == null){
                 return 0;
@@ -153,15 +177,19 @@ public class ImplementationLinkedList {
         ll.insertAtFirst(50);
         ll.display();
 
-       ll.insertAtIndex(2,200);
-       ll.display();
-
-       ll.insertAt(3,999);
-       ll.display();
-        System.out.println(ll.size());
-        System.out.println(ll.getAt(3));
-
-        ll.insertAtLastHead(5);
+//       ll.insertAtIndex(2,200);
+//       ll.display();
+//
+//       ll.insertAt(3,999);
+//       ll.display();
+//        System.out.println(ll.size());
+//        System.out.println(ll.getAt(3));
+//
+//        ll.insertAtLastHead(5);
+//        ll.display();
+        ll.deleteAt(2);
+        ll.display();
+        ll.deleteAt(0);
         ll.display();
     }
 }
