@@ -2,7 +2,7 @@ package com.shivaa.hashing;
 
 public class hashingForAllString {
     public static void main(String[] args) {
-        String str = "JGAAAAnsbvsHHJSAADHHSjjs";
+        String str = "AAA";
 
         int[] hashMap = new int[256];
 
