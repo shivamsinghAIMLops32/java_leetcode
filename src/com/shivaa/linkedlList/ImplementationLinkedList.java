@@ -15,20 +15,20 @@ public class ImplementationLinkedList {
          int size  =0;
 
          // insert without tail
-//        void insertAtLastHead(int value){
-//            Node newNode = new Node(value);
-//            if(head == null){
-//                head = newNode;
-//            }
-//            else{
-//                Node temp = head;
-//                while(temp!=null){
-//                    temp = temp.next;
-//                }
-//                temp.next = newNode;
-//            }
-//            size++;
-//        }
+        void insertAtLastHead(int value){
+            Node newNode = new Node(value);
+            if(head == null){
+                head = newNode;
+            }
+            else{
+                Node temp = head;
+                while(temp.next!=null){  // last index par rukega. so temp ka next != null
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+            }
+            size++;
+        }
 
         // when there is a linked list previously
         void insertAtEnd(int val){
@@ -161,6 +161,7 @@ public class ImplementationLinkedList {
         System.out.println(ll.size());
         System.out.println(ll.getAt(3));
 
-
+        ll.insertAtLastHead(5);
+        ll.display();
     }
 }
